@@ -41,9 +41,20 @@ const taskSlice = createSlice({
       // Toggle the completion status
       taskToUpdate.completed = !taskToUpdate.completed;
     },
+    
+    // edit task 
+    editTask : (state , action ) => {
+      console.log("new" +action.payload.NewTask );
+      const index = state.tasks.findIndex( task => task.id === action.payload.editId);
+      console.log(index);
+      if (index !== -1) {
+        state.tasks[index].title =  action.payload.NewTask;
+        
+      }
+    }
   }
 });
 
 // Exporting actions and reducer
-export const { addTask, deleteTask, setFilter, toggleTask } = taskSlice.actions;
+export const { addTask, deleteTask, setFilter, toggleTask , editTask } = taskSlice.actions;
 export default taskSlice.reducer;

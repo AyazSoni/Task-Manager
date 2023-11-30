@@ -4,6 +4,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import TaskAdd from './TaskAdd';
 import '../ALL CSS/TaskList.css'; 
 import deletes from "../Images/trash.svg";
+import edit from "../Images/pencil-square.svg";
 import { deleteTask, setFilter, toggleTask } from '../Redux/TaskSlice';
 
 // TaskList component
@@ -12,15 +13,21 @@ const TaskList = () => {
   const { tasks, filter } = useSelector((state) => state.tasks);
   const [activeFilter, setActiveFilter] = useState('all');
   const [addTask, setAddTask] = useState(0);
+  const [edit_id, set_edit_id] = useState("");
+  const [edit_title, set_edit_title] = useState("");
   const dispatch = useDispatch();
 
   // Handle task deletion
   const handleDelete = (taskId) => {
-    console.log(tasks);
     console.log("id :" + taskId);
     dispatch(deleteTask(taskId));
   };
-
+  // handle edit taskI
+  const handleEdit = (task) => {
+    setAddTask(2);
+    set_edit_id(task.id);
+    set_edit_title(task.title);
+  };
   // Handle filter change
   const handleFilter = (selectedFilter) => {
     setActiveFilter(selectedFilter);
@@ -76,14 +83,16 @@ const TaskList = () => {
                 {/* Task title */}
                 <span className="task">{task.title}</span>
                 {/* Delete task button */}
-                <span onClick={() => handleDelete(task.id)} className="delete-task"> <img src={deletes} alt="delete" /> </span>
+                <span onClick={() => handleDelete(task.id)} className="delete-edit-task"> <img src={deletes} alt="delete" /> </span>
+                {/* edit task button */}
+                <span onClick={() => handleEdit(task)} className="delete-task"> <img src={edit} alt="edit" /> </span>
               </div>
             </div>
           ))}
         </div>
       </div>
       {/* Render TaskAdd component  when click + */}
-      <TaskAdd show={addTask} setShow={setAddTask} />
+      <TaskAdd show={addTask} setShow={setAddTask} edit_id ={edit_id} edit_title={edit_title}   />
       <div className="add-button-holder">
         {/* Button to add a new task */}
         <button className="Add-btn" onClick={handleAddTask}>+</button>

@@ -105,11 +105,16 @@ body {
   background-color: white;
 }
 
-/* Delete Task Styles */
-.delete-task {
+/* Delete Task Styles  and Edit */
+.delete-edit-task {
   background-color: none;
 }
 
+/* task title */
+.task {
+  width: 200px;
+  overflow-x: auto;
+}
 /* Media Query for Larger Screens */
 @media screen and (min-width: 768px) {
   .task-container {
@@ -124,5 +129,10 @@ body {
 
   .btn {
     width: 300px;
+  }
+ .task {
+    text-align: left;
+    width: 600px;
+    
   }
 }
