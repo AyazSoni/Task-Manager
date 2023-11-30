@@ -1,0 +1,128 @@
+/* General Styles */
+body {
+  margin: 0;
+  font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+/* Header Styles */
+.header {
+  color: white;
+  text-align: center;
+  padding: 10px;
+}
+
+/* Main Container Styles */
+.main {
+  background-color: #8ec5e1;
+}
+
+/* Button Styles */
+.btn {
+  border: 0;
+  width: 120px;
+  padding: 5px;
+  text-align: center;
+  color: #323232;
+  background-color: #e3e3e3;
+  font-weight: bold;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  font-size: 15px;
+}
+
+/* Button Holder Styles */
+.btn-holder {
+  display: flex;
+  justify-content: center;
+  background-color: white;
+}
+
+/* Header Container Styles */
+.header-container {
+  background-color: #267fac;
+}
+
+/* Add Button Styles */
+.Add-btn {
+  border: 0;
+  font-size: 5vh;
+  width: 7vh;
+  height: 7vh;
+  border-radius: 6vh;
+  background-image: linear-gradient(to bottom right, #00C0FF, #4218B8);
+}
+
+/* Add Button Holder Styles */
+.add-button-holder {
+  display: flex;
+  justify-content: center;
+  padding: 1vh;
+}
+
+/* Task Container Styles */
+.task-container {
+  margin: auto;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  padding: 1vh;
+  height: 450px;
+  overflow: auto;
+}
+
+/* Todo Row Styles */
+.todo-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 4px auto;
+  color: #fff;
+  padding: 16px;
+  border-radius: 5px;
+  width: 90%;
+}
+
+/* Todo Row Alternating Colors */
+.todo-row:nth-child(4n + 1) {
+  background: linear-gradient(90deg, rgba(93, 12, 255, 1) 0%, rgba(155, 0, 250, 1) 100%);
+}
+
+.todo-row:nth-child(4n + 2) {
+  background: linear-gradient(90deg, rgba(255, 118, 20, 1) 0%, rgba(255, 84, 17, 1) 100%);
+}
+
+.todo-row:nth-child(4n + 3) {
+  background: linear-gradient(90deg, rgba(255, 12, 241, 1) 0%, rgba(250, 0, 135, 1) 100%);
+}
+
+.todo-row:nth-child(4n) {
+  background: linear-gradient(90deg, rgba(20, 159, 255, 1) 0%, rgba(17, 122, 255, 1) 100%);
+}
+
+/* Active Button Styles */
+.active-btn {
+  border-bottom: 3px solid #446ef3;
+  color: #446ef3;
+  background-color: white;
+}
+
+/* Delete Task Styles */
+.delete-task {
+  background-color: none;
+}
+
+/* Media Query for Larger Screens */
+@media screen and (min-width: 768px) {
+  .task-container {
+    height: 600px;
+    width: 800px;
+    text-align: center;
+  }
+
+  .header {
+    font-size: 50px;
+  }
+
+  .btn {
+    width: 300px;
+  }
+}
